@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function get_members(){
+            return ['egoing', 'k8805', 'sorialgi', 'leezche'];
+        }
+        var members = get_members();
+        // document.write(members[0]);
+        // document.write(members[1]);
+        // document.write(members[2]);
+
+        for (var i = 0; i < members.length; i++) {
+            document.write(members[i].toUpperCase() + "<br>");
+        }
+
+        //추가
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        li.push('f');
+        li = li.concat(['g', 'h']);     //복수의 원소 추가
+        li.unshift('z');                //z를 배열의 시작지점으로 추가
+        alert(li);
+
+        var a = ['a', 'b', 'c'];
+        a.splice(1, 0, 'd');            //1번 인덱스 앞에 d를 추가
+        a.splice(1, 1, 'x', 'y');       //1번 인덱스에서 1번 인덱스를 삭제 하고 x, y를 추가 + 삭제된 데이터 b 리턴
+
+        //제거
+        li.shift();                     //제일 앞에 있는 데이터 제거
+        alert(li);
+        li.pop();                       //제일 뒤에 있는 데이터 제거
+        alert(li);
+
+        //정렬
+        var li = ['c', 'e', 'a', 'b', 'd'];
+        li.sort();
+        alert(li);
+
+        //역정렬
+        var li = ['c', 'e', 'a', 'b', 'd'];
+        li.reverse();
+        alert(li);
+    </script>
+</body>
+</html>
