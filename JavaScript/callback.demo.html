@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="callback.js"></script>
+</head>
+<body>
+    <script>
+        //sortNumber : 콜백 함수
+        //콜백함수를 수신받는 sort라는 메서드가 콜백함수의 내용을 인자로 전달받아
+        //내부적으로 호출하는 것을 통해 sort라는 함수가 동작하는 기본적인 동작방법을
+        //변경할 수 있음 , 값으로써 함수를 사용할 수 있으므로 original함수의 동작 방법을
+        //완전하게 바꿀 수 있음
+        //js의 함수가 값이기 때문에 콜백이 가능함
+        alert(numbers.sort(sortNumber)); // array, [20,10,9,8,7,6,5,4,3,2,1]
+    </script>
+</body>
+</html>
