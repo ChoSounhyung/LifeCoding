@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "scope.js"></script>
+</head>
+<body>
+    <script>
+        fscope();
+        alert('함수밖 '+vscope);
+        
+        for(var i = 0; i < 5; i++) {
+            a();    //a함수에서 var안붙이면 무한반복함
+            document.write(i);
+        }
+        document.write('<br>');
+
+        //전역변수를 사용하고 싶지 않다면 익명함수를 호출할 수 있음
+        (function(){
+            var MYAPP = {}
+            MYAPP.calculator = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.coordinate = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.calculator.left = 10;
+            MYAPP.calculator.right = 20;
+            function sum(){
+                return MYAPP.calculator.left + MYAPP.calculator.right;
+            }
+            document.write(sum());
+        }())
+
+        //js는 함수에 대한 유효범위만을 제공함
+        //name은 지역변수가 아님
+        for(var i = 0; i < 1; i++){
+            var name = 'coding everybody';
+        }
+        alert(name);
+
+        document.write("<br>")
+        b();
+    </script>
+</body>
+</html>
