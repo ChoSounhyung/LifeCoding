@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        function outter() {
+            var title = 'coding everybody';
+            function inner() {
+                alert(title);   //내부함수에서 외부함수의 지역변수에 접근 가능
+            }
+            inner();
+        }
+        outter();
+        */
+
+        function outter() {
+            var title = 'coding everybody';
+            return function() {
+                alert(title);
+            }
+        }
+        inner = outter();   //외부 함수가 종료된 이후에도 외부함수에 접근 가능
+        inner();
+
+        function factory_movie(title){  //함수의 매개변수는 지역변수
+            return {
+                get_title : function (){
+                    return title;
+                },
+                set_title : function(_title){
+                    title = _title
+                }
+            }
+        }   //get_title, set_title : public | title : factory_movie의 내부 함수인 get_title, set_title에서만 변경할 수 있는 private
+
+        ghost = factory_movie('Ghost in the shell');
+        matrix = factory_movie('Matrix');
+        
+        alert(ghost.get_title());
+        alert(matrix.get_title());
+        
+        ghost.set_title('공각기동대');
+        
+        alert(ghost.get_title());       //공각기동대
+        alert(matrix.get_title());      //Matrix
+        // ghost, matrix는 똑같은 외부함수 factory_movie를 공유하고 있지만 get_title의 결과는 서로 다름
+        // -> 외부함수가 실행될 때마다 새로운 지역변수를 포함하는 클로저가 생성되므로 둘은 서로 완전히 독립된 객체가 됨
+
+        var arr = []
+        for(var i = 0; i < 5; i++){
+            arr[i] = function(id){
+                return function() {
+                    return id;
+                }
+            }(i);
+        }
+        for(var index in arr) {
+            document.write(arr[index]());
+        }
+    </script>
+</body>
+</html>
