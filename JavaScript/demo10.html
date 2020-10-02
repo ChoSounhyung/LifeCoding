@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //부정하면 모두 true로 바뀌어 실행됨
+        if('') {            //false
+            alert('빈 문자열');
+        }
+
+        if(undecined) {     //false
+            alert('undefined');
+        }
+
+        var a;
+        if(a) {             //false
+            alert('값이 할당되지 않은 변수')
+        }
+
+        if(null) {          //false
+            alert('null');
+        }
+
+        if(NaN) {           //false
+            alert('NaN');
+        }
+    </script>
+</body>
+</html>

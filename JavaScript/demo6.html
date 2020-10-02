@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(true) {      //true면 실행
+            alert('result : true');
+        }
+
+        if(true) {      //false면 무시
+            alert('result : true');
+        }
+
+        if(true) {
+            alert(1);
+            alert(2);
+            alert(3);
+            alert(4);
+        }
+        alert(5);       //위의 조건문이 끝나면 실행(1, 2, 3, 4 -> 5);
+
+        if(true) {
+            alert(1);   //실행
+        } else {
+            alert(2);   //무시
+        }
+
+        if(false) {
+            alert(1);
+        } else if(true) {   //else는 앞문장이 실행되지 않았을 때 실행 됨
+            alert(2);       //2 출력
+        } else if(true) {
+            alert(3);       //앞에서 실행 됐으므로 실행 안됨
+        } else {
+            alert(4);       //앞에서 실행 됐으므로 실행 안됨
+        }
+    </script>
+</body>
+</html>
