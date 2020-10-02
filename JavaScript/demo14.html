@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <script>
+            //인덱스를 문자로 지정
+            //배열과 다르게 객체는 {}이용
+            //객체 생성
+            
+            //1
+            var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+            
+            /*
+            //2
+            var grades = {};
+            grades['egoing'] = 10;
+            grades['k8805'] = 6;
+            grades['sorialgi'] = 80;
+            
+            //3
+            var grades = new Object();
+            grades['egoing'] = 10;
+            grades['k8805'] = 6;
+            grades['sorialgi'] = 80;
+            */
+
+            alert(grades['k8805']);         //6
+            alert(grades['k88'+'05']);      //6
+            alert(grades.k8805);            //6
+
+            //배열은 저장된 데이터들이 순서를 갖고 있음
+            //객체는 순서가 없음(key와 value가 있음)
+
+            for(key in grades) {
+                document.write("<li>key : "+key+", value : "+grades[key]+"</li>");
+            }
+
+            var grades = {
+                'list' : {'egoing' : 10, 'k8805' : 8, 'sorialgi' : 80},
+                'show' : function() {
+                    alert('Hello World');
+                },
+                'showthis' : function() {
+                    for(var name in this.list) {    //this : 함수가 속해있는 객체를 가리킴(grades)
+                        alert(name);
+                        alert(this.list[name]);
+                    }      
+                }
+            }
+            alert(grades['list']['egoing']);
+            grades['show']();
+            grades.showthis();          //egoing,10, k8805,8, sorialgi,80
+        </script>
+    </ul>
+</body>
+</html>
