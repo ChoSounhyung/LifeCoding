@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        function 함수명([인자...[,인자]]) {
+            코드
+            return 반환값
+        }
+        */
+
+        //재사용성
+        /*
+        function numbering() {
+            i = 0;
+            while(i < 10) {
+                document.write(i);
+                i += 1;
+            }
+        }
+        numbering();
+        numbering();
+        numbering();
+        */
+
+        //입력
+        /*
+        function get_member1(){
+            return 'egoing';
+            return 'leezche';
+            //egoing만 return
+            //return 하면 함수가 종료되기 때문
+        }
+        
+        function get_member2(){
+            return 'k8805';
+        }
+        
+        alert(get_member1());       //egoing
+        alert(get_member2());       //k8805
+        */
+
+        
+        //출력
+        /*
+        function get_argument(arg){
+            return arg;
+        }
+        
+        alert(get_argument(1));
+        alert(get_argument(2));
+
+        function get_arguments(arg1, arg2){
+            return arg1 + arg2
+        }
+        
+        alert(get_arguments(10, 20));       //30
+        alert(get_arguments(20, 30));       //50
+        */
+
+        //함수를 정의하는 다른 방법
+        numbering = function() {
+            i = 0;
+            while(i < 10) {
+                document.write(i);
+                i += 1;
+            }
+        }
+
+        //익명함수
+        //정의된 함수를 ()로 묶고 동시에 호출함
+        (function() {
+            i = 0;
+            while(i < 10) {
+                document.write(i);
+                i += 1;
+            }
+        })();
+    </script>
+</body>
+</html>
