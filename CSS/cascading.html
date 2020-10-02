@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {            /* 가장 포괄적 */
+            color:tomato !important;    /* !important : 강제로 적용되게 함 */
+        }
+        .classsel {     /* 태그보다 구체적 */
+            color:powderblue;
+        }
+        #idsel{         /* 특정한 태그에 대해서만 적용되므로 class보다 구체적 */
+            color:teal;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <!-- 하나의 태그에 css가 중첩 적용 됐을 때 우선순위 : tag < class < id < style -->
+        <li>html</li>
+        <!-- style이 id보다 태그에 가깝기 때문에 더 구체적이고 명시적 -->
+        <li id="idsel" class="classsel" style="color:rebeccapurple">css</li>
+        <li>javascript</li>
+    </ul>
+    <ol>
+        <li>style attribute</li>
+        <li>id selector</li>
+        <li>class selector</li>
+        <li>tag selector</li>
+    </ol>
+</body>
+</html>
