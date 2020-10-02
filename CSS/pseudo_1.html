@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {        /* 방문 안 했을 때 */
+            color:black;
+        }
+        a:visited {     /* 방문 했을 때 */
+            color:red;
+        }
+        a:hover {       /* 마우스가 a태그 위에 있을 때 */
+            color:yellow;
+        }
+        a:active{       /* 모든 a태그중에 active되어있는 것(마우스를 누르고있을 때) */
+            color:green;
+        }
+        a:focus {       /* tab누르면 focus되고 그 상태에서 enter누르면 링크에 들어가짐 */
+            color: white;
+        }
+        input:focus {
+            background-color: black;
+            color:white;
+        }
+        /* active와 hover는 올려져 있을 때 클릭할 경우 (active상태이면서 hover상태)동급이므로 뒤에 선언된 선택자 적용 -> 따라서 우선순위가 중요함 */
+    </style>
+</head>
+<body>
+    <a href="https://opentutorials.org">방문함</a>
+    <a href="https://a.a">방문안함</a>
+    <input type="text">
+</body>
+</html>

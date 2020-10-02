@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            color:red;
+            text-decoration: underline;
+        }
+        #select {   /* 단 한번만 사용 */
+            font-size:30px;
+        }
+        .deactive { /* 여러번 등장해서 grouping */
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="deactive">수업의 순서</h1>
+    <ul>
+        <li class="deactive">HTML</li>
+        <li id="select">CSS</li>
+        <li class="deactive">JavaScript</li>
+    </ul>
+</body>
+</html>

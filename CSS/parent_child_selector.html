@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {     /* ul 안에있는 li */
+            color:red;
+            text-decoration:underline;
+        }
+        #lecture>li {/* lecture의 직계 자손인 li에만 적용 */
+            border:1px solid red;
+        }
+        ul, ol {    /* 여러태그에 적용 */
+            background-color: powderblue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <ol id="lecture">
+        <li>HTML</li>
+        <li>CSS
+            <ol>
+                <li>selecor</li>
+                <li>declaration</li>
+            </ol>
+        </li>
+        <li>JavaScript</li>
+    </ul>
+</body>
+</html>
