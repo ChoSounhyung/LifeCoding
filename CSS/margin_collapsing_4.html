@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #empty {
+            margin-top: 50px;
+            margin-bottom: 100px;
+            /* border:1px solid tomato; --> empty의 시각적인 요소가 없어지면 이 태그의 마진값은 둘 중 더 큰 값이 적용됨 */
+        }
+        #normal {
+            background-color: palegoldenrod;
+            margin-top: 100px;      /* normal의 마진이 100보다 더 커지면 내려가지만 empty와 겹쳐서 움직임이 없음 */
+        }
+    </style>
+</head>
+<body>
+    <div id="empty"></div>
+    <div id="normal">normal</div>
+</body>
+</html>

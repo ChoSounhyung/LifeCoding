@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 부모태그와 자식태그 사이에서 일어나는 마진 겹침 -->
+    <style>
+        #parent {
+            /* border: 1px solid tomato; --> border를 없애면 child의 위치가 바뀜 */
+            margin-top: 100px;      /* child가 부모 마진인 100px을 넘어서지 않는 이상 child의 위치는 그대로 */
+        }
+        #child {
+            background-color: palegoldenrod;
+            margin-top: 50px;       /* 부모와 자식중 더 큰쪽의 마진값이 적용됨 */
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child">
+            Hello world
+        </div>
+    </div>
+</body>
+</html>
