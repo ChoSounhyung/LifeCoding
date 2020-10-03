@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            font-size: 3rem;
+            display: inline-block;
+            
+            /* transition-property: font-size transform; */   /* 모든 효과에 대해 변화가 일어났을 때 전환됨  */
+            /* transition-duration: 0.1s; */    /* (장면전환이 0.1초동안 일어남)부드럽게 변화 시키기 위함 */
+            /* transition: all 0.1s; */     /* 한번에 쓸 수 있음 */
+            transition: font-size 1s, transform 0.1s;   /* 따로 적용하는 것도 가능 */
+            transition-delay: 1s;   /* 1초 후에 적용됨 */
+        }
+        a:active {      /* a를 클릭했을 때 */
+            transform: translate(20px, 20px);   /* x축, y축으로 20px만큼 */
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">Click</a>
+</body>
+</html>
