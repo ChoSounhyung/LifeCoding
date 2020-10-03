@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 이 meta태그가 있어야 반응형이 적용됨 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* cascading - 우선순위 중요 */
+        @media (max-width: 600px) {     /* 화면 크기가 600px이하가 되면 bgcolor를 teal로 */
+            body {
+                background-color: teal;
+            }
+        }
+        @media (max-width: 500px) {     /* 화면 크기가 500px이하가 되면 bgcolor를 tomato로 (min-width는 이상) */
+            body {
+                background-color: tomato;
+            }
+        }
+        @media (min-width: 601px) {     /* 화면 크기가 600px이하가 되면 bgcolor를 teal로 */
+            body {
+                background-color: palegoldenrod;    /* 601이상 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>~500px : red</li>
+        <li>501~600px : teal</li>
+        <li>601px~ : palegoldenrod</li>
+    </ul>
+</body>
+</html>

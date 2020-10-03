@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            display:flex;
+            flex-direction: column;
+            width: 800px;
+            border: 1px solid gray;
+        }
+        header {
+            border-bottom: 1px solid gray;
+            padding-left: 20px;
+        }
+        footer {
+            border-top: 1px solid gray;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            display: flex;
+        }
+        .content nav {
+            border-right: 1px solid gray;
+        }
+        .content aside {
+            border-left: 1px solid gray;
+        }
+        @media (max-width: 500px) {     /* 기존 속성보다 아래에 있어야 우선순위가 높아짐 */
+            .content {
+                flex-direction: column;
+            }
+            .content nav, .content aside {
+                border: none;
+                flex-basis: auto;       /* flex-basis때문에 nav와 aside가 자신의 컨텐트보다 더 큰 자리를 쓰고 있음 */
+            }
+            aside {
+                display: none;          /* 안보이게 함 */
+            }
+        }
+        nav, aside {
+            flex-basis: 150px;
+            flex-shrink: 0;         /* main content만 화면이 줄어들도록 함(nav, aside는 고정) */
+        }
+        main {
+            padding: 10px;
+        }
+        nav {
+            order: 0;   /* 순서 */
+        }
+        main {
+            order: 1;
+        }
+        aside {
+            order: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>생활코딩</h1>
+        </header>
+        <section class="content">
+            <main>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ullam mollitia rerum similique enim, sit facere delectus iusto sunt nobis doloribus voluptatem maxime fuga maiores ipsa harum ipsam magni obcaecati reprehenderit cumque nemo odio, rem sapiente. Consectetur fugiat dolores debitis iste culpa doloribus ex numquam labore veritatis magni enim deleniti, provident a modi? Assumenda velit sequi quisquam. Aut voluptatum reprehenderit commodi quia non nostrum ad dicta harum accusantium sapiente suscipit deleniti cumque ipsa, incidunt quidem vitae facilis autem, alias quo ipsam minima dolore architecto! Delectus, eligendi! Maiores adipisci iste quod quae libero hic earum voluptatibus. Incidunt dolor modi maxime dolores itaque debitis maiores eveniet aperiam magni ab! Rerum aliquam placeat soluta est minima corporis, aspernatur ut rem nemo officiis cumque eum asperiores corrupti. Ipsum impedit provident ducimus assumenda suscipit ullam, vitae aperiam voluptatem quidem nisi! Asperiores nam sint consequuntur cumque suscipit nulla veritatis, iure nostrum, quasi rerum quae minus vel velit ratione maiores aliquid impedit, provident voluptatum odio alias quia neque eveniet aspernatur
+            </main>
+            <nav>
+                <ul>
+                    <li>html</li>
+                    <li>css</li>
+                    <li>javascript</li>
+                </ul>
+            </nav>
+            <aside>
+                AD
+            </aside>
+        </section>
+        <footer>
+            <a href="https://opentutorials.ort/course/1">홈페이지</a>
+        </footer>
+    </div>
+</body>
+</html>

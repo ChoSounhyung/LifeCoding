@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;     /* box size를 content가 아니라 border를 기준으로 설정 */
+        }
+        .container {
+            width: 540px;
+            border: 1px solid gray;
+            margin: auto;
+        }
+        header {
+            border-bottom: 1px solid gray;
+        }
+        nav {
+            float: left;
+            width: 120px;
+            border-right: 1px solid gray;
+        }
+        article {
+            float: left;
+            width: 300px;
+            border-right: 1px solid gray;
+            border-left: 1px solid gray;
+            margin-left: -1px;      /* 왼쪽과 오른쪽의 마진이 오버랩되면서 깔끔해짐 */
+        }
+        aside {
+            float: left;
+            width: 120px;
+            border-left: 1px solid gray;
+            margin-left: -1px;
+        }
+        footer {
+            clear: both;        /* float 속성의 영향을 받지 않음 */
+            border-top: 1px solid gray;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                CSS
+            </h1>
+        </header>
+        <nav>
+            <ul>
+                <li>position</li>
+                <li>float</li>
+                <li>flex</li>
+            </ul>
+        </nav>
+        <article>
+            <h2>float</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint explicabo quae, iste pariatur fugit dolor voluptate repudiandae excepturi? Eos, repellendus? Omnis possimus incidunt eligendi ullam quia dolore, quos unde? Delectus incidunt facilis corrupti dignissimos dolor tenetur inventore, tempora minus excepturi. Exercitationem natus maiores sequi, perspiciatis praesentium facere ea placeat corporis?
+        </article>
+        <aside>
+            ad
+        </aside>
+        <footer>
+            Copyleft
+        </footer>
+    </div>
+</body>
+</html>
