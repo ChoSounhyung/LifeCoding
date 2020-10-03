@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+            background-color: powderblue;
+            height:200px;
+            display:flex;
+            flex-direction:row;
+        }
+        .item{
+            background-color: tomato;
+            color:white;
+            border:1px solid white;         
+        }
+        .item:nth-child(1) {
+            flex-basis: 150px;
+            flex-shrink: 1;     /* 1/3만큼 분담 */         /* 1번은 줄어들지 않음 */
+        }
+        .item:nth-child(2) {
+            flex-basis: 150px;      /* 원래 컨테이너보다 크기가 작아지면 부피가 줄어듬 */
+            flex-shrink: 2;     /* 2/3만큼 분담 */         /* flex-grow의 반대기능 | 0으로 하면 화면을 줄여도 부피가 줄어들지 않지만 1로 하면 줄어듬 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

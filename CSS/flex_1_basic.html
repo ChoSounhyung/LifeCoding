@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c {
+            background-color: powderblue;
+        }
+        .i {
+            background-color: tomato;
+            color: white;
+            border: 1px solid white;
+        }
+        .container {
+            background-color: powderblue;
+            display: flex;      /* flex를 사용하려면 부모의 display를 flex로 해야됨 */
+            /* flex-direction: row-reverse; */       /* flex-direction의 기본값 : row(row-reverse하면 반대로 정렬됨) */
+            flex-direction: column;         /* 수직  column-reverse하면 역정렬 */
+            height: 200px;
+        }
+        .item {
+            background-color: tomato;
+            color: white;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <!--div는 화면 전체를 쓰는 태그(block level element)-->
+    <div class="c">
+        <div class="i">1</div>
+        <div class="i">2</div>
+        <div class="i">3</div>
+        <div class="i">4</div>
+        <div class="i">5</div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+</body>
+</html>

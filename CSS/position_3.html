@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+        #parent, #other{
+            border: 5px solid tomato
+        }
+        #large {
+            height: 10000px;
+            background-color: tomato;
+        }
+        #me {
+            background-color: black;
+            color: white;
+            position: fixed;        /* scroll과는 무관하게 고정되어 잇음 */
+            left: 0;
+            top: 0;
+            width: 100%;            /* width, height값을 지정하지 않으면 부모가 없어지므로 자신의 컨텐트 크기가 됨 */
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="other">other</div>
+    <div id="parent">
+        parent
+        <div id="me">me</div>
+    </div>
+    <div id="large"></div>
+</body>
+</html>
