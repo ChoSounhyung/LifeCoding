@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function zero(){
+            document.write(
+                'zero.length', zero.length,
+                '<br>',
+                'arguments', arguments.length
+            );
+        }
+
+        zero(); // zero.length 0 arguments 0 
+        document.write('<br><br>');
+
+        function one(arg1){
+            document.write(
+                'one.length', one.length,
+                '<br>',
+                'arguments', arguments.length
+            );
+        }
+
+        one('val1', 'val2');  // one.length 1 arguments 2 
+        document.write('<br><br>');
+
+        function two(arg1, arg2){
+            document.write(
+                'two.length', two.length,
+                '<br>',
+                'arguments', arguments.length
+            );
+        }
+
+        two('val1');  // two.length 2 arguments 1
+
+        //함수이름.length : 그 함수가 매개변수로 정의한 매개변수의 숫자
+        //arguments.length : 그 함수를 호출할 때 전달한 인자의 개수
+    </script>
+</body>
+</html>
