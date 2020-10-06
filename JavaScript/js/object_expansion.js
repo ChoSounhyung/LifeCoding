@@ -21,7 +21,10 @@ for(var name in o) {
 
 for(var name in a) {
     if (a.hasOwnProperty(name)) {  //name에 해당하는 prperty를 a가 가지고 있는지 체크
+        //
         console.log(name);  //0, 1, 2
     }
     console.log(name);      //0, 1, 2, contain
 }
+
+//contain은 부모로부터 상속받은 프로퍼티이므로 for in문을 통해 열거해도 되지만 hasOwnProperty를 통해 name이 a객체의 직접적으로 정의되어있는지 확인하는 것이 필요함
