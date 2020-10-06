@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object.keys()     -> 객체의 key를 배열로 리턴
+        var arr = ["a", "b", "c"];
+        console.log('Object.keys(arr)', Object.keys(arr));  // Object.keys(arr) ["0", "1", "2"]
+
+        var e = {"name": "egoing", "age": 20, "city": "seoul"}
+        Object.keys(e);             //["name", "age", "city"]
+        
+        //Object.prototype.toString()       //toString : 객체가 담고 있는 값을 사람이 보기 좋게 출력해줌
+        var o = new Object();
+        console.log('o.toString()', o.toString());
+        //Object(내장객체)는 js에 있는 모든 객체들의 공통적인 조상이므로 Object가 갖고있는 메서드중에 prototype이 있는 메서드들은 모든 객체들이 상속받고 있는 공통의 기능이 됨
+        //모든 객체들이 공통적으로 갖고 있어야되는 기능이 있다면 object의 prototype객체를 수정하는 것을 통해 구현 가능
+
+        var a = new Array(1, 2, 3);
+        console.log('a.toString()', a.toString());
+    </script>
+</body>
+</html>
