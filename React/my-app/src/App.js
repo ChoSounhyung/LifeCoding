@@ -4,9 +4,10 @@ import './App.css';
 import Comment from'./Comment.js';
 
 const commentsFromServer = [
-  {name: 'Inje Lee', content: 'My comment!'},
-  {name: '현빈', content: '이게 최선입니까? 확실해요?'},
-  {name: 'Tony Stark', content: 'I am Iron Man.'},
+  {id: 1, name: 'Inje Lee', content: 'My comment!'},
+  {id: 2, name: '현빈', content: '이게 최선입니까? 확실해요?'},
+  {id: 3, name: 'Tony Stark', content: 'I am Iron Man.'},
+  {id: 4, name: 'Cho Sounhyung', content: '모든일에 최선을 다하자'},
 ];
 
 var timer;
@@ -58,6 +59,8 @@ class App extends React.Component {
           {comments.map((comment, index) => {
             return (
               <Comment
+                key={comment.id}
+                id={comment.id}
                 name={comment.name}
                 content={comment.content} />
             )
