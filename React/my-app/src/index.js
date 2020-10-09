@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import AttendanceBook from './Chapter08/AttendanceBook';
+import SignUp from './Chapter09/SignUp';
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(
@@ -13,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
 // );
 
 ReactDOM.render(
-  <AttendanceBook />,
+  <SignUp />,
   document.getElementById('root')
 );
 
