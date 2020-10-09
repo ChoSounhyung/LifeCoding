@@ -42,8 +42,8 @@ class LoginControl extends React.Component {
         } else {
             button = <LoginButton onClick={this.handleLoginClick} />;
         }
-        
-        let notiCount = 10;
+
+        let notiCount = 0;
 
         return (
             <div>
@@ -52,8 +52,9 @@ class LoginControl extends React.Component {
                 {isLoggedIn &&
                     <div>
                         <h5>{new Date().toLocaleString()}</h5>
-                        {notiCount > 0 &&
+                        {notiCount > 0 ?
                             <h5>{'New noti : ' + notiCount}</h5>
+                            : <h5>{'No notification'}</h5>
                         }
                     </div>
                 }           
