@@ -37,7 +37,10 @@ const styles = {
 }
 
 class Comment extends React.Component {
+    
     render() {
+        const {name, content} = this.props;
+    
         return (
             <div style={styles.root}>
                 <div style={styles.imageContainer}>
@@ -47,10 +50,10 @@ class Comment extends React.Component {
                 </div>
                 <div style={styles.commentContainer}>
                     <div style={styles.nameText}>
-                        {this.props.name}
+                        {name}
                     </div>
                     <span style={styles.contentText}>
-                        {this.props.content}
+                        {content}
                     </span>
                 </div>
             </div>
