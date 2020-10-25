@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.room.Room;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.nio.channels.AsynchronousChannelGroup;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         //db 생성성
         final AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "todo-db")
-                .allowMainThreadQueries()
                 .build();
 
         //UI 갱신
@@ -39,7 +40,23 @@ public class MainActivity extends AppCompatActivity {
 
         //버튼 클릭 시 DB에 insert
         findViewById(R.id.add_button).setOnClickListener(view -> {
-            db.todoDao().insert(new Todo(mTodoEditText.getText().toString()));
+            new InsertAsyncTask(db.todoDao())
+                    .execute(new Todo(mTodoEditText.getText().toString()));
         });
+    }
+
+    //비동기처리
+    private static class InsertAsyncTask extends AsyncTask<Todo, Void, Void> {
+        private TodoDao mTodoDao;
+
+        public InsertAsyncTask(TodoDao mTodoDao) {
+            this.mTodoDao = mTodoDao;
+        }
+
+        @Override
+        protected Void doInBackground(Todo... todos) {
+            mTodoDao.insert(todos[0]);
+            return null;
+        }
     }
 }
