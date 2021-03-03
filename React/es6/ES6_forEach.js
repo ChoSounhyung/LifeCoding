@@ -5,28 +5,28 @@ function parse(qs) {
   var result = {};
   for (var i = 0; i < chunks.length; i++) {
     var parts = chunks[i].split("=");
-    var key = parts[0]; // banana
-    var value = parts[1]; // 10
+    var key = parts[0]; // 'banana'
+    var value = parts[1]; // '10'
     result[key] = value; // {banana : '10'}
   }
   return result; //{banana: "10", apple: "20", orange: "30"}
 }
 
-// ES6
+// value를 숫자로 변환
 function parse(qs) {
   var queryString = qs.substr(0); // queryString = 'banana=10&apple=20&orange=30'
   var chunks = qs.split("&");
   var result = {};
   for (var i = 0; i < chunks.length; i++) {
     var parts = chunks[i].split("=");
-    var key = parts[0]; // banana
+    var key = parts[0]; // 'banana'
     var value = Number.isNaN(Number(parts[1])) ? parts[1] : Number(parts[1]); // 10
     result[key] = value; // {banana : '10'}
   }
   return result; //{banana: "10", apple: "20", orange: "30"}
 }
 
-// more simply
+// ES6 forEach()
 function parse(qs) {
   const queryString = qs.substr(0);
   const chunks = queryString.split("&");
