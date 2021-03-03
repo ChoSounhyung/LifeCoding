@@ -39,3 +39,15 @@ function parse(qs) {
   });
   return result;
 }
+
+// more simply
+function parse(qs) {
+  const queryString = qs.substr(0);
+  const chunks = queryString.split("&");
+  let result = {};
+  chunks.forEach((chunk) => {
+    const [key, value] = chunk.split("="); // key = 'banana', value = '10'
+    result[key] = value;
+  });
+  return result;
+}
