@@ -1,9 +1,24 @@
 import React from "react";
-import PropComponent from "./03/PropsComponent";
+import ChildComponent from "./03/ChildComponent";
 
 class App extends React.Component {
   render() {
-    return <PropComponent name="두잇 리액트" />;
+    const array = [1, 2, 3];
+    const obj = { name: "제목", age: 30 };
+    const node = <h1>노드</h1>;
+    const func = () => {
+      console.log("메시지");
+    };
+    return (
+      <ChildComponent
+        boolValue={true}
+        numValue={1}
+        arrayValue={array}
+        objValue={obj}
+        nodeValue={node}
+        funcValue={func}
+      />
+    );
   }
 }
 
