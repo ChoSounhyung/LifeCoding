@@ -1,21 +1,15 @@
 import React from "react";
-import BooleanComponent from "./03/BooleanComponent";
+import ChildComponent2 from "./03/ChildComponent2";
 
 class App extends React.Component {
   render() {
     return (
-      (
-        <div>
-          <b>지루할 때 : </b>
-          <BooleanComponent board />
-        </div>
-      ),
-      (
-        <div>
-          <b>즐거울 때 : </b>
-          <BooleanComponent />
-        </div>
-      )
+      <div>
+        <ChildComponent2
+          objValue={{ age: 18 }}
+          requirrequiredStringValue={"string"}
+        />
+      </div>
     );
   }
 }
