@@ -1,13 +1,9 @@
 import React from "react";
-import TodaysPlan from "./03/TodaysPlan";
+import PropComponent from "./03/PropsComponent";
 
 class App extends React.Component {
   render() {
-    return (
-      <div className="body">
-        <TodaysPlan />
-      </div>
-    );
+    return <PropComponent name="두잇 리액트" />;
   }
 }
 
