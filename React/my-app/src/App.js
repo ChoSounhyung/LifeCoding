@@ -1,11 +1,11 @@
 import React from "react";
-import FourceUpdateExample from "./03/ForceUpdateExample";
+import LifecycleExample from "./03/LifecycleExample";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <FourceUpdateExample />
+        <LifecycleExample />
       </div>
     );
   }
