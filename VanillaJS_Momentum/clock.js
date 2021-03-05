@@ -1,7 +1,7 @@
 //js-clock이라는 클래스 이름을 찾아줌
 const clockContainer = document.querySelector(".js-clock");
 //js-clock 클래스의 자식을 탐색
-clockTitle = clockContainer.querySelector(".hi");
+clockTitle = clockContainer.querySelector("h1");
 
 function getTime() {
   const date = new Date();
