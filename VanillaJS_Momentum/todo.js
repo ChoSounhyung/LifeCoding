@@ -6,7 +6,24 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 // createElement는 반대로 HTML에 생성하는 것
 
 const TODOS_LS = "toDos";
-const toDos = [];
+
+let toDos = [];
+
+function deleteToDo(event) {
+  // console.log(event.target.parentNode);
+  const btn = event.target;
+  const li = btn.parentNode;
+  toDoList.removeChild(li);
+  // filter는 forEach에서 function을 실행하는 것 같이 각각의 item과 같이 실행하여 true인 아이템만 가지고 새로운 array를 만듬
+  const cleanToDos = toDos.filter(function (toDo) {
+    // console.log(typeof li.id);     // string
+    // console.log(typeof toDo.id);    // number
+    return toDo.id !== parseInt(li.id); // id가 다른것만 새 array에 담아 return
+  });
+  // console.log(cleanToDos);
+  toDos = cleanToDos;
+  saveToDos();
+}
 
 function saveToDos() {
   // JSON.stringify는 자바스크립트 object를 string으로 바꿔 줌(localStorage에는 string만 저장 가능)
@@ -19,6 +36,7 @@ function paintToDo(text) {
   const span = document.createElement("span");
   const newId = toDos.length + 1;
   delBtn.innerText = "❌";
+  delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
   li.appendChild(delBtn);
   li.appendChild(span);
