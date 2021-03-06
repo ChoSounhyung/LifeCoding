@@ -6,16 +6,30 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 // createElement는 반대로 HTML에 생성하는 것
 
 const TODOS_LS = "toDos";
+const toDos = [];
+
+function saveToDos() {
+  // JSON.stringify는 자바스크립트 object를 string으로 바꿔 줌(localStorage에는 string만 저장 가능)
+  localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+}
 
 function paintToDo(text) {
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
-  delBtn.innerText = "❌";
   const span = document.createElement("span");
+  const newId = toDos.length + 1;
+  delBtn.innerText = "❌";
   span.innerText = text;
   li.appendChild(delBtn);
   li.appendChild(span);
+  li.id = newId;
   toDoList.appendChild(li);
+  const toDoObj = {
+    text,
+    id: newId,
+  };
+  toDos.push(toDoObj);
+  saveToDos(); // push 하기 전에 저장하면 saveToDos를 불러도 toDos가 비어있어서 저장할게 없음
 }
 
 function handleSubmit(event) {
@@ -27,8 +41,16 @@ function handleSubmit(event) {
 
 function loadToDos() {
   // localStorage에서 온 것을 로드함
-  const toDos = localStorage.getItem(TODOS_LS);
-  if (toDos !== null) {
+  const loadedtoDos = localStorage.getItem(TODOS_LS);
+  if (loadedtoDos !== null) {
+    // console.log(loadedtoDos);
+    // string이 아니라 Object를 불러와야됨
+    const parsedToDos = JSON.parse(loadedtoDos);
+    // console.log(parsedToDos);
+    parsedToDos.forEach(function (toDo) {
+      // console.log(toDo.text);
+      paintToDo(toDo.text);
+    });
   } // toDos는 list가 null이어도 항상 보이기 때문에 else는 생략
 }
 
