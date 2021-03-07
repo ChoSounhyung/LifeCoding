@@ -1,0 +1,30 @@
+.box {
+  background: blue;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  color: white;
+}
+
+.box:nth-child(2) {
+  margin-left: 50px;
+}
+
+.box:nth-child(3) {
+  margin-left: 20px;
+}
+/* 이 상자들은 기본적으로 block임
+   block은 element고 block옆에는 어떠한 element도 올 수 없음
+   box 옆으로 엄청 큰 margin을 갖고 있음
+   이게 기본 속성이고, display:block을 뜻함
+
+   display: inline-block
+   --> block 속성은 유지
+       box들이 서로 옆에 있게 됨
+   inline-block vs inline
+   inline은 box가 아니라 element임
+   유동적인 거라서 너비와 높이가 없음 -> 모든 block 속성을 잃을 것
+   inline은 같은 직선에 있다는 뜻
+   예를 들면 text는 inline
+   inline-block은 block 속성을 갖고있어서 너비와 높이를 정할 수 있고 서로 옆에 있을 수 있음(일직선)
+ */
