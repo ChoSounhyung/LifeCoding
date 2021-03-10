@@ -2,9 +2,16 @@
   <head>
     <meta charset="utf-8" />
     <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .container {
         display: flex;
         flex-direction: column;
+        width: 800px;
+        border: 1px solid gray;
       }
       header {
         border-bottom: 1px solid gray;
@@ -29,8 +36,15 @@
         flex-basis: 150px;
         flex-shrink: 0;
       }
+      nav {
+        order: 0;
+      }
       main {
         padding: 10px;
+        order: 1;
+      }
+      aside {
+        order: 2;
       }
     </style>
   </head>
@@ -40,6 +54,12 @@
         <h1>생활코딩</h1>
       </header>
       <section class="content">
+        <main>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cum
+          quo. Voluptas vel fuga quisquam tempora sapiente, dicta, nam
+          perferendis, maiores rem hic minima velit quaerat repellat. Veritatis,
+          aut magnam!
+        </main>
         <nav>
           <ul>
             <li>html</li>
@@ -47,12 +67,6 @@
             <li>javascript</li>
           </ul>
         </nav>
-        <main>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cum
-          quo. Voluptas vel fuga quisquam tempora sapiente, dicta, nam
-          perferendis, maiores rem hic minima velit quaerat repellat. Veritatis,
-          aut magnam!
-        </main>
         <aside>AD</aside>
       </section>
       <footer>
