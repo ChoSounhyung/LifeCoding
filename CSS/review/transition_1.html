@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <style>
+      a {
+        font-size: 3rem;
+        display: inline-block;
+        /* transition-property: all; /* 모든 효과에 대해 변화가 일어났을 때 전환이 일어난다는 뜻 
+        transition-duration: 0.1s; */
+
+        transition: fontsize 1s, transform 0.1s;
+      }
+      a:active {
+        transform: translate(20px, 20px);
+        /* block이나 inline-block에서만 적용됨 */
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">Click</a>
+  </body>
+</html>
